@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Heart, Skull, Smartphone, DollarSign, Users, Home } from 'lucide-react';
+import { generateStorySegment } from './deepseekService';
 import './styles.css';
 
 const ChoicesGame = () => {
@@ -7,13 +8,15 @@ const ChoicesGame = () => {
   const [displayText, setDisplayText] = useState('');
   const [showChoices, setShowChoices] = useState(false);
   const [isTyping, setIsTyping] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [stats, setStats] = useState({
     relationships: 50,
     money: 30,
     mental: 50,
     reputation: 50
   });
-  const [storyIndex, setStoryIndex] = useState(0);
+  const [storyHistory, setStoryHistory] = useState([]);
+  const [currentStory, setCurrentStory] = useState('');
 
   // MASSIVE STORY NETWORK - All interconnected
   const storyNodes = {
