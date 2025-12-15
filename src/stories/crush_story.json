@@ -1,119 +1,85 @@
 {
   "id": "crush_story",
-  "title": "The Drunk Text",
+  "title": "Rag Week Romance",
   "startingNode": 1,
   "nodes": [
     {
       "id": 1,
-      "title": "Regret in the Morning",
-      "story": "You wake up with a pounding headache and a sinking feeling. You check your phone. Sent: 'I've been in love with you for years. Please don't hate me.' To: Your crush. Delivered: 3:47 AM.",
+      "title": "Rag After-Party",
+      "story": "Rag week. You're painted blue and gold, drunk on cheap cider. Your crush from chemistry practicals is here, equally wasted. 'I've wanted to kiss you since first year!' you slur. They laugh. 'Prove it!' The res common room empties. It's just you two and a half-empty bottle of Viceroy.",
       "choices": [
         {
-          "text": "Immediately unsend the message",
+          "text": "Kiss them passionately",
           "nextNode": 2,
-          "stats": { "mental": -10, "relationships": 0 }
+          "stats": { "mental": -15, "reputation": 5, "relationships": 25 }
         },
         {
-          "text": "Send a follow-up: 'Sorry, was drunk'",
+          "text": "Take a shot for courage first",
           "nextNode": 3,
-          "stats": { "mental": -15, "relationships": -5 }
+          "stats": { "mental": -20, "reputation": 0, "relationships": 20 }
         },
         {
-          "text": "Wait for their response",
+          "text": "Vomit in a plant and excuse yourself",
           "nextNode": 4,
-          "stats": { "mental": -20, "relationships": 5 }
+          "stats": { "mental": -25, "reputation": -15, "relationships": -20 }
         }
       ]
     },
     {
-      "id": 4,
-      "title": "The Reply",
-      "story": "Three dots appear. Disappear. Reappear. Finally: 'We need to talk. Meet me at the usual coffee place in an hour.'",
+      "id": 2,
+      "title": "Morning After Awkwardness",
+      "story": "You wake up in their single res bed. Naked. They're already up, making coffee. 'So... that happened.' You notice a framed photo: them with a partner. 'My boyfriend is in Germany on exchange,' they say casually. 'Open relationship though.' Your phone: 15 missed calls from your roommate.",
       "choices": [
         {
-          "text": "Panic and cancel",
+          "text": "Get dressed and leave silently",
           "nextNode": 5,
-          "stats": { "mental": -25, "relationships": -20 }
+          "stats": { "mental": -30, "reputation": -10, "relationships": -30 }
         },
         {
-          "text": "Agree to meet",
+          "text": "Ask if you can see them again",
           "nextNode": 6,
-          "stats": { "mental": -10, "relationships": 10 }
+          "stats": { "mental": -25, "reputation": -20, "relationships": 35 }
         },
         {
-          "text": "Ask to reschedule for later",
+          "text": "Ask for a threesome when boyfriend returns",
           "nextNode": 7,
-          "stats": { "mental": -15, "relationships": -10 }
+          "stats": { "mental": -35, "reputation": -30, "relationships": 40 }
         }
       ]
     },
     {
       "id": 6,
-      "title": "The Conversation",
-      "story": "They're already there, two coffees waiting. 'So... drunk you had some things to say.' They smile nervously. 'Sober you want to elaborate?'",
+      "title": "Complicated Situationship",
+      "story": "You become their 'campus partner.' Weekday hookups, weekends they FaceTime their boyfriend. You catch feelings. They say, 'Don't fall in love, it's just fun.' During midterms, they ghost you for a week. You see them holding hands with someone new at The Radium.",
       "choices": [
         {
-          "text": "'It was just the alcohol talking'",
+          "text": "Confront them publicly",
           "nextNode": 8,
-          "stats": { "mental": -5, "relationships": -15 }
+          "stats": { "mental": -50, "reputation": -40, "relationships": -80 }
         },
         {
-          "text": "'Every word was true'",
+          "text": "Start hooking up with their friend",
           "nextNode": 9,
-          "stats": { "mental": -20, "relationships": 25 }
+          "stats": { "mental": -45, "reputation": -35, "relationships": -50 }
         },
         {
-          "text": "'Can we pretend it never happened?'",
+          "text": "Focus on your studies",
           "nextNode": 10,
-          "stats": { "mental": -10, "relationships": -25 }
+          "stats": { "mental": -20, "reputation": 15, "relationships": -60 }
         }
       ]
     },
     {
-      "id": 9,
-      "title": "Revelation",
-      "story": "They reach across the table and take your hand. 'I've felt the same way. For years. I was just too scared to say it.'",
+      "id": 8,
+      "title": "Campus Drama Queen",
+      "story": "You make a scene at the cafeteria. 'You used me!' Security escorts you out. The video goes viral: '#WitsDrama.' You're temporarily suspended for disrupting campus peace. Your crush transfers to UJ. You become a meme: 'Rag Week Regret.'",
       "choices": [
         {
-          "text": "Kiss them right there in the cafe",
-          "nextNode": 11,
-          "stats": { "mental": 20, "relationships": 40 }
-        },
-        {
-          "text": "Ask if they want to try dating",
-          "nextNode": 12,
-          "stats": { "mental": 15, "relationships": 35 }
-        },
-        {
-          "text": "Panic and say you need time to think",
-          "nextNode": 13,
-          "stats": { "mental": -15, "relationships": -30 }
-        }
-      ]
-    },
-    {
-      "id": 11,
-      "title": "New Beginning",
-      "story": "The first date turns into a relationship. Your drunk confession becomes your 'how we got together' story. Sometimes truth comes out sideways.",
-      "choices": [
-        {
-          "text": "Start your new relationship",
+          "text": "Embrace the meme fame",
           "nextNode": 0,
-          "stats": { "mental": 30, "relationships": 50 },
-          "isEnding": true
-        }
-      ]
-    },
-    {
-      "id": 10,
-      "title": "The Distance",
-      "story": "They look hurt. 'Sure. We can pretend.' But things are never the same. The friendship fades into awkward texts and cancelled plans.",
-      "choices": [
-        {
-          "text": "Lose a friend, gain clarity",
-          "nextNode": 0,
-          "stats": { "mental": -25, "relationships": -40 },
-          "isEnding": true
+          "stats": { "mental": -60, "reputation": -50, "relationships": -90 },
+          "isEnding": true,
+          "endingText": "You drop out, become a micro-influencer. Your TikTok about campus drama gets brand deals. Your crush becomes a lawyer. You meet at a club years later - they don't recognize you."
         }
       ]
     }

@@ -1,119 +1,99 @@
 {
   "id": "cheating_lover_story",
-  "title": "The Incriminating Text",
+  "title": "Residence Room Betrayal",
   "startingNode": 1,
   "nodes": [
     {
       "id": 1,
-      "title": "The Glowing Screen",
-      "story": "Their phone buzzes on the coffee table while they're in the shower. You glance over. 'Last night was amazing. Can't wait for round two tonight? -B' Your blood runs cold.",
+      "title": "The WhatsApp Group Leak",
+      "story": "You're in res group study when your best friend slides you their phone. A leaked WhatsApp: your partner of two years planning a 'study session' with your roommate. 'My bed or yours? Mine squeaks lol.' Timestamp: last night while you were at work. Your roommate is across the table, innocent smile.",
       "choices": [
         {
-          "text": "Confront them immediately",
+          "text": "Confront them both right now",
           "nextNode": 2,
-          "stats": { "mental": -20, "relationships": -30 }
+          "stats": { "mental": -30, "reputation": -20, "relationships": -50 }
         },
         {
-          "text": "Investigate further first",
+          "text": "Set up a sting operation",
           "nextNode": 3,
-          "stats": { "mental": -25, "relationships": -10 }
+          "stats": { "mental": -25, "reputation": -10, "relationships": -40 }
         },
         {
-          "text": "Pretend you never saw it",
+          "text": "Pretend you don't know, gather evidence",
           "nextNode": 4,
-          "stats": { "mental": -40, "relationships": 0 }
+          "stats": { "mental": -35, "reputation": 0, "relationships": -30 }
         }
       ]
     },
     {
-      "id": 3,
-      "title": "The Search",
-      "story": "You check their phone (password hasn't changed). Hundreds of texts with 'B.' Photos. Hotel receipts. Three months of lies. The shower stops running.",
+      "id": 4,
+      "title": "The Setup",
+      "story": "You tell your partner you're visiting family for the weekend. Hide a recording device in your room. From your car outside res, you watch on your laptop camera: they enter your room with your roommate. Moans through the audio. You cry silently, recording everything.",
       "choices": [
         {
-          "text": "Take screenshots as evidence",
+          "text": "Burst in with security",
           "nextNode": 5,
-          "stats": { "mental": -30, "relationships": -20 }
+          "stats": { "mental": -50, "reputation": -30, "relationships": -80 }
         },
         {
-          "text": "Delete the evidence and pretend",
+          "text": "Send the recording to everyone",
           "nextNode": 6,
-          "stats": { "mental": -50, "relationships": -5 }
+          "stats": { "mental": -60, "reputation": -50, "relationships": -100 }
         },
         {
-          "text": "Leave the phone and walk out",
+          "text": "Confront them calmly later",
           "nextNode": 7,
-          "stats": { "mental": -15, "relationships": -50 }
+          "stats": { "mental": -40, "reputation": -15, "relationships": -70 }
         }
       ]
     },
     {
-      "id": 5,
-      "title": "The Confrontation",
-      "story": "They come out wrapped in a towel. You hold up their phone. 'Who's B?' Their face pales. 'It's not what it looks like-'",
+      "id": 6,
+      "title": "Viral Revenge",
+      "story": "You leak the audio to the res WhatsApp group. It spreads to the whole campus. 'Res 5B Sex Tape' trends. Your partner and roommate are shamed off campus. But you're also labeled 'psycho' for recording them. University investigates YOU for violation of privacy.",
       "choices": [
         {
-          "text": "Scream and throw things",
+          "text": "Fight the charges",
           "nextNode": 8,
-          "stats": { "mental": -60, "relationships": -80 }
+          "stats": { "mental": -70, "money": -5000, "reputation": -60 }
         },
         {
-          "text": "Calmly pack your things",
+          "text": "Transfer residences",
           "nextNode": 9,
-          "stats": { "mental": -25, "relationships": -70 }
+          "stats": { "mental": -55, "reputation": -40, "relationships": -90 }
         },
         {
-          "text": "Give them a chance to explain",
+          "text": "Drop out temporarily",
           "nextNode": 10,
-          "stats": { "mental": -40, "relationships": -40 }
+          "stats": { "mental": -65, "money": -10000, "reputation": -50 }
         }
       ]
     },
     {
-      "id": 10,
-      "title": "The Excuses",
-      "story": "'It was a mistake! Just once! You've been so distant lately...' They're crying now. 'I'll end it. We can go to counseling. Please.'",
+      "id": 8,
+      "title": "Legal Battles and Breakdown",
+      "story": "Your ex and roommate sue you for defamation. Your parents mortgage their house for legal fees. You fail the semester. The court case drags for years. You see photos of them graduated, married, with a baby. You're 25, working at a call center, still in therapy.",
       "choices": [
         {
-          "text": "Agree to try to work it out",
-          "nextNode": 11,
-          "stats": { "mental": -70, "relationships": -30 }
-        },
-        {
-          "text": "Tell them it's over",
-          "nextNode": 12,
-          "stats": { "mental": -30, "relationships": -100 }
-        },
-        {
-          "text": "Say you need space to think",
-          "nextNode": 13,
-          "stats": { "mental": -40, "relationships": -60 }
-        }
-      ]
-    },
-    {
-      "id": 11,
-      "title": "Attempting Repair",
-      "story": "Months of counseling. Constant phone checking. Paranoia. They say they've changed. You try to believe them. The trust is gone, replaced by vigilance.",
-      "choices": [
-        {
-          "text": "This is your new normal",
+          "text": "Try to move on",
           "nextNode": 0,
-          "stats": { "mental": -80, "relationships": -50 },
-          "isEnding": true
+          "stats": { "mental": -85, "money": -50000, "reputation": -70 },
+          "isEnding": true,
+          "endingText": "You never finish your degree. The case settles out of court. You move to a different city, change your name. Some betrayals cost more than a relationship."
         }
       ]
     },
     {
-      "id": 12,
-      "title": "Starting Over",
-      "story": "The breakup is messy. Mutual friends choose sides. You delete all the photos. The bed feels too big. But at least it's honest.",
+      "id": 7,
+      "title": "Mature but Messy",
+      "story": "You wait until morning. Show them the recording. They cry, beg forgiveness. Your roommate moves out. You try couples counseling through Student Wellness. The trust is gone. You stay together out of habit, checking each other's phones daily. The resentment grows.",
       "choices": [
         {
-          "text": "Begin the healing process",
+          "text": "Break up at graduation",
           "nextNode": 0,
-          "stats": { "mental": -40, "relationships": -100 },
-          "isEnding": true
+          "stats": { "mental": -40, "reputation": 10, "relationships": -100 },
+          "isEnding": true,
+          "endingText": "You graduate, get separate jobs in different provinces. At alumni events, you're civil. They marry someone else. You're relieved it wasn't you."
         }
       ]
     }

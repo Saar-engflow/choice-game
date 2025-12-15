@@ -1,176 +1,116 @@
 {
   "id": "lover_story",
-  "title": "The Relationship Talk",
+  "title": "Varsity vs Long Distance",
   "startingNode": 1,
   "nodes": [
     {
       "id": 1,
-      "title": "The Question",
-      "story": "You're cuddled on the couch when they turn to you, serious expression on their face. 'Where is this going? I need to know if we're heading toward forever or just passing time.' Your stomach drops.",
+      "title": "First Semester Reality",
+      "story": "Your high school sweetheart is at UCT, you're at Wits. Three months in, the Facetime calls get shorter. 'Sorry, res wifi is trash,' they say at 1 AM. Their Snap location shows them at Roxy's Bar. Your resmate says, 'Bruh, everyone hooks up in first year. It's varsity law.'",
       "choices": [
         {
-          "text": "'I want forever with you'",
+          "text": "Book a bus to Cape Town this weekend",
           "nextNode": 2,
-          "stats": { "mental": 10, "relationships": 20 }
+          "stats": { "mental": -10, "money": -50, "relationships": 15 }
         },
         {
-          "text": "'I'm not ready to think about forever'",
+          "text": "Confront them about the bar",
           "nextNode": 3,
-          "stats": { "mental": -10, "relationships": -20 }
+          "stats": { "mental": -15, "reputation": 0, "relationships": -20 }
         },
         {
-          "text": "'Can we talk about this another time?'",
+          "text": "Go to a res party yourself",
           "nextNode": 4,
-          "stats": { "mental": -5, "relationships": -10 }
+          "stats": { "mental": -5, "reputation": -10, "relationships": -15 }
         }
       ]
     },
     {
       "id": 2,
-      "title": "Moving Forward",
-      "story": "Their face lights up. 'Really?' They pull you into a passionate kiss. 'I've been waiting to hear that. Let's start looking at apartments together next weekend.'",
+      "title": "Surprise Visit Disaster",
+      "story": "You arrive at their res in Rondebosch. Their roommate looks shocked. 'They're at a beach braai with... friends.' You find them at Camps Bay, shirtless, playing beer pong with someone's arm around them. 'Baby! What a surprise!' they slur. The 'friend' kisses their neck. 'Oops, habit!'",
       "choices": [
         {
-          "text": "Get excited and start planning",
+          "text": "Throw your drink and leave",
           "nextNode": 5,
-          "stats": { "mental": 15, "relationships": 25 }
+          "stats": { "mental": -40, "reputation": -20, "relationships": -80 }
         },
         {
-          "text": "'Whoa, let's not rush things'",
+          "text": "Join the party, get wasted",
           "nextNode": 6,
-          "stats": { "mental": -5, "relationships": -15 }
+          "stats": { "mental": -50, "reputation": -30, "relationships": -40 }
         },
         {
-          "text": "Panic internally but agree outwardly",
+          "text": "Calmly ask to talk privately",
           "nextNode": 7,
-          "stats": { "mental": -20, "relationships": 10 }
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "title": "The Distance",
-      "story": "They pull away physically. 'So this is just a fling for you?' Their voice is cold. 'I've been planning my future around you.'",
-      "choices": [
-        {
-          "text": "Try to explain your fears",
-          "nextNode": 8,
-          "stats": { "mental": -10, "relationships": -5 }
-        },
-        {
-          "text": "Stand your ground",
-          "nextNode": 9,
-          "stats": { "mental": 5, "relationships": -30 }
-        },
-        {
-          "text": "Backtrack and say you're scared",
-          "nextNode": 10,
-          "stats": { "mental": -15, "relationships": 5 }
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "title": "Avoidance",
-      "story": "They get up from the couch. 'You always do this. Every time things get real, you run.' They grab their jacket. 'I need some space.'",
-      "choices": [
-        {
-          "text": "Let them go",
-          "nextNode": 11,
-          "stats": { "mental": -5, "relationships": -25 }
-        },
-        {
-          "text": "Stop them at the door",
-          "nextNode": 12,
-          "stats": { "mental": -10, "relationships": -10 }
-        },
-        {
-          "text": "Text them an apology later",
-          "nextNode": 13,
-          "stats": { "mental": -8, "relationships": -15 }
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "title": "Apartment Hunting",
-      "story": "You're viewing a perfect little place together. 'Our first home,' they whisper, squeezing your hand. The reality of commitment hits you.",
-      "choices": [
-        {
-          "text": "Sign the lease enthusiastically",
-          "nextNode": 14,
-          "stats": { "mental": 20, "relationships": 30, "money": -50 }
-        },
-        {
-          "text": "Find an excuse to delay",
-          "nextNode": 15,
-          "stats": { "mental": -15, "relationships": -20 }
-        },
-        {
-          "text": "Admit you're having second thoughts",
-          "nextNode": 16,
-          "stats": { "mental": -25, "relationships": -40 }
+          "stats": { "mental": -30, "reputation": 5, "relationships": -60 }
         }
       ]
     },
     {
       "id": 6,
-      "title": "Mixed Signals",
-      "story": "'First you say forever, then you say slow down. Which is it?' They look hurt and confused. 'I need consistency, not hot and cold.'",
+      "title": "Revenge Hookup Spiral",
+      "story": "You take shots with a cute commerce student from Stellenbosch. 'My boyfriend cheated,' you slur. 'Mine too!' They kiss you. Photos surface on Yik Yak: 'Wits vs UCT drama at Camps Bay!' Your partner tries to apologize. You're in a stranger's Airbnb, doing lines of coke off a textbook.",
       "choices": [
         {
-          "text": "Apologize and commit fully",
-          "nextNode": 5,
-          "stats": { "mental": -10, "relationships": 10 }
+          "text": "Go home, get an STI test",
+          "nextNode": 8,
+          "stats": { "mental": -60, "reputation": -50, "relationships": -90 }
         },
         {
-          "text": "Admit you're confused",
-          "nextNode": 17,
-          "stats": { "mental": -20, "relationships": -25 }
+          "text": "Continue the bender for the weekend",
+          "nextNode": 9,
+          "stats": { "mental": -80, "money": -200, "relationships": -100 }
         },
         {
-          "text": "Suggest couples counseling",
-          "nextNode": 18,
-          "stats": { "mental": 5, "relationships": -10, "money": -30 }
+          "text": "Call your partner, crying",
+          "nextNode": 10,
+          "stats": { "mental": -70, "reputation": -40, "relationships": -70 }
         }
       ]
     },
     {
-      "id": 14,
-      "title": "Moving In Together",
-      "story": "The first night in your new place. Boxes everywhere, takeout on the floor. They kiss you. 'Our life starts now.'",
+      "id": 9,
+      "title": "Academic Freefall",
+      "story": "You miss three weeks of classes. Your parents get a call from the faculty. You're put on academic probation. The commerce student ghosts you. Your ex transfers to Wits 'to make things right.' You see them holding hands with someone at Neelsie Student Centre. Your life is a meme.",
       "choices": [
         {
-          "text": "Embrace the new beginning",
+          "text": "Drop out, move back home",
           "nextNode": 0,
-          "stats": { "mental": 25, "relationships": 35 },
-          "isEnding": true
+          "stats": { "mental": -90, "money": -1000, "reputation": -80 },
+          "isEnding": true,
+          "endingText": "You work at your uncle's spaza shop. Your ex graduates, tags you in a 'look how far we've come' post. You develop a healthy TikTok addiction."
         }
       ]
     },
     {
-      "id": 16,
-      "title": "Breaking Up",
-      "story": "The truth comes out: you're not ready. There are tears, shouting, then silence. They pack their things. 'I hope you find what you're looking for.'",
+      "id": 7,
+      "title": "Mature Resolution",
+      "story": "You have the talk on the beach. 'Varsity changes people,' they admit. You both cry. Agree to open the relationship or break up. Choose open. Set rules: protection always, no mutual friends, monthly check-ins. It's messy but honest.",
       "choices": [
         {
-          "text": "Start over alone",
-          "nextNode": 0,
-          "stats": { "mental": -30, "relationships": -100 },
-          "isEnding": true
+          "text": "Try the open relationship",
+          "nextNode": 11,
+          "stats": { "mental": -20, "reputation": -15, "relationships": -30 }
+        },
+        {
+          "text": "Break up but stay friends",
+          "nextNode": 12,
+          "stats": { "mental": -25, "reputation": 10, "relationships": -100 }
         }
       ]
     },
     {
-      "id": 17,
-      "title": "Taking a Break",
-      "story": "You agree to separate for a month. No contact. Time to think. The silence is both painful and freeing.",
+      "id": 11,
+      "title": "Polyamory on Campus",
+      "story": "You hook up with your statistics tutor. They date their rugby teammate. Jealousy flares during exam season. 'You spent study week with them!' fights over WhatsApp. But the sex is incredible after make-up fights. Your friends call you 'progressive' but whisper 'messy.'",
       "choices": [
         {
-          "text": "See what happens after the break",
+          "text": "Continue the arrangement",
           "nextNode": 0,
-          "stats": { "mental": 10, "relationships": -50 },
-          "isEnding": true
+          "stats": { "mental": -40, "reputation": -25, "relationships": 20 },
+          "isEnding": true,
+          "endingText": "You graduate with a 2:2 and a complicated love life. Your open relationship lasts until graduation, then fades with distance. No regrets, just stories."
         }
       ]
     }
