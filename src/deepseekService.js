@@ -1,5 +1,5 @@
 const API_KEY = process.env.REACT_APP_DEEPSEEK_API_KEY;
-const API_URL = 'https://api.deepseek.com/v1/chat/completions'; // Assuming this is the endpoint, adjust if different
+const API_URL = 'https://api.deepseek.com/v1/chat/completions/'; // Assuming this is the endpoint, adjust if different
 
 export const generateStorySegment = async (currentStory, choice, stats) => {
   try {
