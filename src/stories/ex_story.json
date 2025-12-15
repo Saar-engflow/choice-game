@@ -238,7 +238,7 @@
       "choices": [
         {
           "text": "pull them closer",
-          "nextNode": 5.1,
+          "nextNode": 5.11111111,
           "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
         },
        
@@ -269,7 +269,7 @@
       "choices": [
         {
           "text": "proceed",
-          "nextNode": 5.1,
+          "nextNode": 5.11111111,
           "stats": { "mental": -30, "reputation": -10, "relationships": -25 }
         },
        
@@ -281,7 +281,7 @@
       ]
     },
        {
-      "id": 5.1,
+      "id": 5.11111111,
       "title": "fuck yeaaaaa",
       "story": "ya'll start fucking your brains out......next day you wake up next to your ex and they ask you 'so... we back together or we juc fucking ?' ",
       "choices": [
