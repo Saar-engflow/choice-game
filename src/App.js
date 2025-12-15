@@ -80,11 +80,11 @@ const ChoicesGame = () => {
   }, [currentStory, nodeMap]);
 
   // Check for game over
-  useEffect(() => {
-    if (stats.mental <= 0 || stats.relationships <= 0 || stats.money <= 0) {
-      setGameOver(true);
-    }
-  }, [stats]);
+  // useEffect(() => {
+  //   if (stats.mental <= 0 || stats.relationships <= 0 || stats.money <= 0) {
+  //     setGameOver(true);
+  //   }
+  // }, [stats]);
 
   // Typing effect
   useEffect(() => {
@@ -114,15 +114,15 @@ const ChoicesGame = () => {
 
   const handleChoice = (choice) => {
     // Update stats
-    if (choice.stats) {
-      setStats(prev => {
-        const newStats = { ...prev };
-        Object.keys(choice.stats).forEach(key => {
-          newStats[key] = Math.max(0, Math.min(100, newStats[key] + choice.stats[key]));
-        });
-        return newStats;
-      });
-    }
+    // if (choice.stats) {
+    //   setStats(prev => {
+    //     const newStats = { ...prev };
+    //     Object.keys(choice.stats).forEach(key => {
+    //       newStats[key] = Math.max(0, Math.min(100, newStats[key] + choice.stats[key]));
+    //     });
+    //     return newStats;
+    //   });
+    // }
 
     // Check if this is an ending
     if (choice.isEnding) {
@@ -145,10 +145,10 @@ const ChoicesGame = () => {
     setCurrentStory(null);
     setCurrentNode(null);
     setStats({
-      relationships: 50,
-      money: 30,
-      mental: 50,
-      reputation: 50
+      relationships: 100,
+      money: 100,
+      mental: 100,
+      reputation: 100
     });
     setVisitedStories(new Set());
     setGameOver(false);
