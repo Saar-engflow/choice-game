@@ -1,0 +1,121 @@
+{
+  "id": "cheating_lover_story",
+  "title": "The Incriminating Text",
+  "startingNode": 1,
+  "nodes": [
+    {
+      "id": 1,
+      "title": "The Glowing Screen",
+      "story": "Their phone buzzes on the coffee table while they're in the shower. You glance over. 'Last night was amazing. Can't wait for round two tonight? -B' Your blood runs cold.",
+      "choices": [
+        {
+          "text": "Confront them immediately",
+          "nextNode": 2,
+          "stats": { "mental": -20, "relationships": -30 }
+        },
+        {
+          "text": "Investigate further first",
+          "nextNode": 3,
+          "stats": { "mental": -25, "relationships": -10 }
+        },
+        {
+          "text": "Pretend you never saw it",
+          "nextNode": 4,
+          "stats": { "mental": -40, "relationships": 0 }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "The Search",
+      "story": "You check their phone (password hasn't changed). Hundreds of texts with 'B.' Photos. Hotel receipts. Three months of lies. The shower stops running.",
+      "choices": [
+        {
+          "text": "Take screenshots as evidence",
+          "nextNode": 5,
+          "stats": { "mental": -30, "relationships": -20 }
+        },
+        {
+          "text": "Delete the evidence and pretend",
+          "nextNode": 6,
+          "stats": { "mental": -50, "relationships": -5 }
+        },
+        {
+          "text": "Leave the phone and walk out",
+          "nextNode": 7,
+          "stats": { "mental": -15, "relationships": -50 }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "The Confrontation",
+      "story": "They come out wrapped in a towel. You hold up their phone. 'Who's B?' Their face pales. 'It's not what it looks like-'",
+      "choices": [
+        {
+          "text": "Scream and throw things",
+          "nextNode": 8,
+          "stats": { "mental": -60, "relationships": -80 }
+        },
+        {
+          "text": "Calmly pack your things",
+          "nextNode": 9,
+          "stats": { "mental": -25, "relationships": -70 }
+        },
+        {
+          "text": "Give them a chance to explain",
+          "nextNode": 10,
+          "stats": { "mental": -40, "relationships": -40 }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "The Excuses",
+      "story": "'It was a mistake! Just once! You've been so distant lately...' They're crying now. 'I'll end it. We can go to counseling. Please.'",
+      "choices": [
+        {
+          "text": "Agree to try to work it out",
+          "nextNode": 11,
+          "stats": { "mental": -70, "relationships": -30 }
+        },
+        {
+          "text": "Tell them it's over",
+          "nextNode": 12,
+          "stats": { "mental": -30, "relationships": -100 }
+        },
+        {
+          "text": "Say you need space to think",
+          "nextNode": 13,
+          "stats": { "mental": -40, "relationships": -60 }
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Attempting Repair",
+      "story": "Months of counseling. Constant phone checking. Paranoia. They say they've changed. You try to believe them. The trust is gone, replaced by vigilance.",
+      "choices": [
+        {
+          "text": "This is your new normal",
+          "nextNode": 0,
+          "stats": { "mental": -80, "relationships": -50 },
+          "isEnding": true
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Starting Over",
+      "story": "The breakup is messy. Mutual friends choose sides. You delete all the photos. The bed feels too big. But at least it's honest.",
+      "choices": [
+        {
+          "text": "Begin the healing process",
+          "nextNode": 0,
+          "stats": { "mental": -40, "relationships": -100 },
+          "isEnding": true
+        }
+      ]
+    }
+  ]
+}

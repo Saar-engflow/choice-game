@@ -1,0 +1,121 @@
+{
+  "id": "crush_story",
+  "title": "The Drunk Text",
+  "startingNode": 1,
+  "nodes": [
+    {
+      "id": 1,
+      "title": "Regret in the Morning",
+      "story": "You wake up with a pounding headache and a sinking feeling. You check your phone. Sent: 'I've been in love with you for years. Please don't hate me.' To: Your crush. Delivered: 3:47 AM.",
+      "choices": [
+        {
+          "text": "Immediately unsend the message",
+          "nextNode": 2,
+          "stats": { "mental": -10, "relationships": 0 }
+        },
+        {
+          "text": "Send a follow-up: 'Sorry, was drunk'",
+          "nextNode": 3,
+          "stats": { "mental": -15, "relationships": -5 }
+        },
+        {
+          "text": "Wait for their response",
+          "nextNode": 4,
+          "stats": { "mental": -20, "relationships": 5 }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "The Reply",
+      "story": "Three dots appear. Disappear. Reappear. Finally: 'We need to talk. Meet me at the usual coffee place in an hour.'",
+      "choices": [
+        {
+          "text": "Panic and cancel",
+          "nextNode": 5,
+          "stats": { "mental": -25, "relationships": -20 }
+        },
+        {
+          "text": "Agree to meet",
+          "nextNode": 6,
+          "stats": { "mental": -10, "relationships": 10 }
+        },
+        {
+          "text": "Ask to reschedule for later",
+          "nextNode": 7,
+          "stats": { "mental": -15, "relationships": -10 }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "The Conversation",
+      "story": "They're already there, two coffees waiting. 'So... drunk you had some things to say.' They smile nervously. 'Sober you want to elaborate?'",
+      "choices": [
+        {
+          "text": "'It was just the alcohol talking'",
+          "nextNode": 8,
+          "stats": { "mental": -5, "relationships": -15 }
+        },
+        {
+          "text": "'Every word was true'",
+          "nextNode": 9,
+          "stats": { "mental": -20, "relationships": 25 }
+        },
+        {
+          "text": "'Can we pretend it never happened?'",
+          "nextNode": 10,
+          "stats": { "mental": -10, "relationships": -25 }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Revelation",
+      "story": "They reach across the table and take your hand. 'I've felt the same way. For years. I was just too scared to say it.'",
+      "choices": [
+        {
+          "text": "Kiss them right there in the cafe",
+          "nextNode": 11,
+          "stats": { "mental": 20, "relationships": 40 }
+        },
+        {
+          "text": "Ask if they want to try dating",
+          "nextNode": 12,
+          "stats": { "mental": 15, "relationships": 35 }
+        },
+        {
+          "text": "Panic and say you need time to think",
+          "nextNode": 13,
+          "stats": { "mental": -15, "relationships": -30 }
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "New Beginning",
+      "story": "The first date turns into a relationship. Your drunk confession becomes your 'how we got together' story. Sometimes truth comes out sideways.",
+      "choices": [
+        {
+          "text": "Start your new relationship",
+          "nextNode": 0,
+          "stats": { "mental": 30, "relationships": 50 },
+          "isEnding": true
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "The Distance",
+      "story": "They look hurt. 'Sure. We can pretend.' But things are never the same. The friendship fades into awkward texts and cancelled plans.",
+      "choices": [
+        {
+          "text": "Lose a friend, gain clarity",
+          "nextNode": 0,
+          "stats": { "mental": -25, "relationships": -40 },
+          "isEnding": true
+        }
+      ]
+    }
+  ]
+}

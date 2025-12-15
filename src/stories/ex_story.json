@@ -1,0 +1,244 @@
+{
+  "id": "ex_story",
+  "title": "The Ex Who Won't Let Go",
+  "startingNode": 1,
+  "nodes": [
+    {
+      "id": 1,
+      "title": "The Midnight Text",
+      "story": "It's 2 AM. Your phone buzzes with a message from a number you haven't deleted but should have. 'I can't sleep. I keep thinking about us. Can we talk?' Your heart skips a beat despite your better judgment.",
+      "choices": [
+        {
+          "text": "Ignore it and go back to sleep",
+          "nextNode": 2,
+          "stats": { "mental": 5, "relationships": -5 }
+        },
+        {
+          "text": "Reply: 'It's late. We shouldn't do this.'",
+          "nextNode": 3,
+          "stats": { "mental": -3, "relationships": 0 }
+        },
+        {
+          "text": "Reply: 'I miss you too. What do you want to talk about?'",
+          "nextNode": 4,
+          "stats": { "mental": -10, "relationships": 10 }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "The Morning After",
+      "story": "You wake up to 7 missed calls and 12 texts. 'Please just answer. I need to see you. I drove past your place last night.' They're parked outside your apartment right now.",
+      "choices": [
+        {
+          "text": "Call the police",
+          "nextNode": 10,
+          "stats": { "mental": 15, "relationships": -20 }
+        },
+        {
+          "text": "Go outside and confront them",
+          "nextNode": 5,
+          "stats": { "mental": -15, "relationships": 5 }
+        },
+        {
+          "text": "Pretend you're not home",
+          "nextNode": 6,
+          "stats": { "mental": -5, "relationships": -10 }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "The Phone Call",
+      "story": "They call immediately after your reply. 'Please, just hear me out. I've changed. I'm seeing a therapist. I realize what I lost.' Their voice cracks in that familiar way that used to melt your heart.",
+      "choices": [
+        {
+          "text": "Hang up and block the number",
+          "nextNode": 10,
+          "stats": { "mental": 10, "relationships": -15 }
+        },
+        {
+          "text": "Agree to meet for coffee tomorrow",
+          "nextNode": 7,
+          "stats": { "mental": -8, "relationships": 8 }
+        },
+        {
+          "text": "Tell them you're seeing someone new",
+          "nextNode": 8,
+          "stats": { "mental": -5, "relationships": -20 }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Old Flames",
+      "story": "They show up at your door 20 minutes later. 'I couldn't wait.' They pull you into a hug that feels like home and danger all at once. Their lips find yours before you can protest.",
+      "choices": [
+        {
+          "text": "Push them away firmly",
+          "nextNode": 10,
+          "stats": { "mental": 5, "relationships": -25 }
+        },
+        {
+          "text": "Kiss them back, just for a moment",
+          "nextNode": 9,
+          "stats": { "mental": -20, "relationships": 20 }
+        },
+        {
+          "text": "Let them in but keep your distance",
+          "nextNode": 7,
+          "stats": { "mental": -10, "relationships": 10 }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Parking Lot Confrontation",
+      "story": "They're leaning against their car, looking exhausted. 'I haven't slept in days thinking about you.' They reach for your hand. 'One more chance. That's all I'm asking.'",
+      "choices": [
+        {
+          "text": "Slap their hand away",
+          "nextNode": 10,
+          "stats": { "mental": 8, "relationships": -30 }
+        },
+        {
+          "text": "Take their hand, tears in your eyes",
+          "nextNode": 9,
+          "stats": { "mental": -25, "relationships": 25 }
+        },
+        {
+          "text": "Get in your car and drive away",
+          "nextNode": 10,
+          "stats": { "mental": 15, "relationships": -25 }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "The Wait",
+      "story": "You watch from your window as they sit in their car for three hours. Finally, they get out and leave a package on your doorstep. It's the necklace they gave you on your first anniversary.",
+      "choices": [
+        {
+          "text": "Throw it in the trash",
+          "nextNode": 10,
+          "stats": { "mental": 10, "relationships": -30 }
+        },
+        {
+          "text": "Put it on, feeling nostalgic",
+          "nextNode": 9,
+          "stats": { "mental": -20, "relationships": 20 }
+        },
+        {
+          "text": "Mail it back with a final letter",
+          "nextNode": 10,
+          "stats": { "mental": 12, "relationships": -20 }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "The Coffee Date",
+      "story": "At the cafe, they look better than you remember. 'I've really changed,' they say, showing you therapy notes. The old chemistry is still there, buzzing between you.",
+      "choices": [
+        {
+          "text": "Say you're happy for them but leave",
+          "nextNode": 10,
+          "stats": { "mental": 15, "relationships": -10 }
+        },
+        {
+          "text": "Agree to a proper dinner date",
+          "nextNode": 9,
+          "stats": { "mental": -15, "relationships": 20 }
+        },
+        {
+          "text": "Kiss them across the table",
+          "nextNode": 4,
+          "stats": { "mental": -25, "relationships": 30 }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Jealousy Unleashed",
+      "story": "'Who is it?' Their voice turns cold. 'Tell me who you're with.' The calm facade shatters. This is the person you remember.",
+      "choices": [
+        {
+          "text": "Lie to de-escalate",
+          "nextNode": 7,
+          "stats": { "mental": -10, "relationships": -5 }
+        },
+        {
+          "text": "Tell them it's none of their business",
+          "nextNode": 10,
+          "stats": { "mental": 5, "relationships": -35 }
+        },
+        {
+          "text": "Make up a fake partner's name",
+          "nextNode": 5,
+          "stats": { "mental": -8, "relationships": -25 }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Back in the Bedroom",
+      "story": "Old sheets, familiar smells. Their hands know every curve of your body. 'I never stopped loving you,' they whisper as you fall back into old patterns.",
+      "choices": [
+        {
+          "text": "This feels wrong - stop and leave",
+          "nextNode": 10,
+          "stats": { "mental": -5, "relationships": -40 }
+        },
+        {
+          "text": "Surrender to the moment completely",
+          "nextNode": 11,
+          "stats": { "mental": -30, "relationships": 40 }
+        },
+        {
+          "text": "Ask what this means for tomorrow",
+          "nextNode": 12,
+          "stats": { "mental": -15, "relationships": 20 }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Breaking Free",
+      "story": "You make the final break. Blocked numbers, deleted photos, returned items. It hurts like hell, but for the first time in months, you breathe freely.",
+      "choices": [
+        {
+          "text": "Start fresh",
+          "nextNode": 0,
+          "stats": { "mental": 30, "relationships": 0 },
+          "isEnding": true
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "The Cycle Continues",
+      "story": "You're back together. The love bombing lasts a week before the old patterns return. The texts stop, the excuses begin. You're exactly where you were a year ago.",
+      "choices": [
+        {
+          "text": "Accept this is your life now",
+          "nextNode": 0,
+          "stats": { "mental": -40, "relationships": -10 },
+          "isEnding": true
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Uncertain Future",
+      "story": "'Let's take it slow,' they say. But 'slow' means texting constantly and checking in. You're not sure if this is progress or a new kind of trap.",
+      "choices": [
+        {
+          "text": "See where this goes",
+          "nextNode": 0,
+          "stats": { "mental": -20, "relationships": 15 },
+          "isEnding": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "id": "lover_story",
+  "title": "The Relationship Talk",
+  "startingNode": 1,
+  "nodes": [
+    {
+      "id": 1,
+      "title": "The Question",
+      "story": "You're cuddled on the couch when they turn to you, serious expression on their face. 'Where is this going? I need to know if we're heading toward forever or just passing time.' Your stomach drops.",
+      "choices": [
+        {
+          "text": "'I want forever with you'",
+          "nextNode": 2,
+          "stats": { "mental": 10, "relationships": 20 }
+        },
+        {
+          "text": "'I'm not ready to think about forever'",
+          "nextNode": 3,
+          "stats": { "mental": -10, "relationships": -20 }
+        },
+        {
+          "text": "'Can we talk about this another time?'",
+          "nextNode": 4,
+          "stats": { "mental": -5, "relationships": -10 }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Moving Forward",
+      "story": "Their face lights up. 'Really?' They pull you into a passionate kiss. 'I've been waiting to hear that. Let's start looking at apartments together next weekend.'",
+      "choices": [
+        {
+          "text": "Get excited and start planning",
+          "nextNode": 5,
+          "stats": { "mental": 15, "relationships": 25 }
+        },
+        {
+          "text": "'Whoa, let's not rush things'",
+          "nextNode": 6,
+          "stats": { "mental": -5, "relationships": -15 }
+        },
+        {
+          "text": "Panic internally but agree outwardly",
+          "nextNode": 7,
+          "stats": { "mental": -20, "relationships": 10 }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "The Distance",
+      "story": "They pull away physically. 'So this is just a fling for you?' Their voice is cold. 'I've been planning my future around you.'",
+      "choices": [
+        {
+          "text": "Try to explain your fears",
+          "nextNode": 8,
+          "stats": { "mental": -10, "relationships": -5 }
+        },
+        {
+          "text": "Stand your ground",
+          "nextNode": 9,
+          "stats": { "mental": 5, "relationships": -30 }
+        },
+        {
+          "text": "Backtrack and say you're scared",
+          "nextNode": 10,
+          "stats": { "mental": -15, "relationships": 5 }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Avoidance",
+      "story": "They get up from the couch. 'You always do this. Every time things get real, you run.' They grab their jacket. 'I need some space.'",
+      "choices": [
+        {
+          "text": "Let them go",
+          "nextNode": 11,
+          "stats": { "mental": -5, "relationships": -25 }
+        },
+        {
+          "text": "Stop them at the door",
+          "nextNode": 12,
+          "stats": { "mental": -10, "relationships": -10 }
+        },
+        {
+          "text": "Text them an apology later",
+          "nextNode": 13,
+          "stats": { "mental": -8, "relationships": -15 }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Apartment Hunting",
+      "story": "You're viewing a perfect little place together. 'Our first home,' they whisper, squeezing your hand. The reality of commitment hits you.",
+      "choices": [
+        {
+          "text": "Sign the lease enthusiastically",
+          "nextNode": 14,
+          "stats": { "mental": 20, "relationships": 30, "money": -50 }
+        },
+        {
+          "text": "Find an excuse to delay",
+          "nextNode": 15,
+          "stats": { "mental": -15, "relationships": -20 }
+        },
+        {
+          "text": "Admit you're having second thoughts",
+          "nextNode": 16,
+          "stats": { "mental": -25, "relationships": -40 }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Mixed Signals",
+      "story": "'First you say forever, then you say slow down. Which is it?' They look hurt and confused. 'I need consistency, not hot and cold.'",
+      "choices": [
+        {
+          "text": "Apologize and commit fully",
+          "nextNode": 5,
+          "stats": { "mental": -10, "relationships": 10 }
+        },
+        {
+          "text": "Admit you're confused",
+          "nextNode": 17,
+          "stats": { "mental": -20, "relationships": -25 }
+        },
+        {
+          "text": "Suggest couples counseling",
+          "nextNode": 18,
+          "stats": { "mental": 5, "relationships": -10, "money": -30 }
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Moving In Together",
+      "story": "The first night in your new place. Boxes everywhere, takeout on the floor. They kiss you. 'Our life starts now.'",
+      "choices": [
+        {
+          "text": "Embrace the new beginning",
+          "nextNode": 0,
+          "stats": { "mental": 25, "relationships": 35 },
+          "isEnding": true
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Breaking Up",
+      "story": "The truth comes out: you're not ready. There are tears, shouting, then silence. They pack their things. 'I hope you find what you're looking for.'",
+      "choices": [
+        {
+          "text": "Start over alone",
+          "nextNode": 0,
+          "stats": { "mental": -30, "relationships": -100 },
+          "isEnding": true
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Taking a Break",
+      "story": "You agree to separate for a month. No contact. Time to think. The silence is both painful and freeing.",
+      "choices": [
+        {
+          "text": "See what happens after the break",
+          "nextNode": 0,
+          "stats": { "mental": 10, "relationships": -50 },
+          "isEnding": true
+        }
+      ]
+    }
+  ]
+}
