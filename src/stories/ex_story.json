@@ -15,7 +15,7 @@
         },
         {
           "text": "Reply: fuq off!'We're done. Move on.'",
-          "nextNode": 2.11,
+          "nextNode": 211,
           "stats": { "mental": -3, "reputation": 5, "relationships": 0 }
         },
         {
@@ -34,12 +34,12 @@
   "choices": [
     {
       "text": "Unblock them later that night",
-      "nextNode": 2.1,
+      "nextNode": 21,
       "stats": { "mental": -5, "reputation": -2, "relationships": 5 }
     },
     {
       "text": "Stay blocked and distract yourself",
-      "nextNode": 2.2,
+      "nextNode": 22,
       "stats": { "mental": 5, "reputation": 5, "relationships": -5 }
     },
     {
@@ -50,25 +50,25 @@
   ]
 },
 {
-  "id": 2.1,
+  "id": 21,
   "story": "At 1:47 AM you unblock them  and at that very moment they send a text confessing their love to you and a long ass apology of how sorry they are and  they need a second chance.",
   "choices": [
-    { "text": "ask why now?", "nextNode": 2.10 },
-    { "text": "Reply : eat shit and die !", "nextNode": 2.11 },
+    { "text": "ask why now?", "nextNode": 210 },
+    { "text": "Reply : eat shit and die !", "nextNode": 211 },
     { "text": "give them a second chance", "nextNode": 4 }
   ]
 },
 {
-  "id": 2.10,
+  "id": 210,
   "story": "they reply: 'i've been meaning to tell you this for a while now. I've been thinking about you and how much I miss you. I want to make things right and I want to be with you again. i want to break up with my current for you , i made a mistake ... can we meet up at my place?'",
   "choices": [
-    { "text": "don't reply", "nextNode": 2.101 },
-    { "text": "its a trap ,clear as day!", "nextNode": 2.102 },
+    { "text": "don't reply", "nextNode": 2101 },
+    { "text": "its a trap ,clear as day!", "nextNode": 2102 },
     { "text": "agree and heard there the next day", "nextNode": 4 }
   ]
 },
 {
-  "id": 2.101,
+  "id": 2101,
   "story": "you see 'typing..'  then all of a sudden they just stop texting",
   "choices": [
     { "text": "sleep and forget about it", "nextNode": 4 }
@@ -76,7 +76,7 @@
   ]
 },
 {
-  "id": 2.102,
+  "id": 2102,
   "story": "you reply : nice try but i ain't falling for that shit.  bluetick you.",
   "choices": [
     { "text": " forget about it and sleep", "nextNode": 4 }
@@ -85,7 +85,7 @@
 },
 
 {
-  "id": 2.11,
+  "id": 211,
   "story": "they reply: ouch  , i deserve that ..but i wont stop trying to get you back",
   "choices": [
     { "text": "ignore and sleep", "nextNode": 4 }
@@ -95,7 +95,7 @@
 
 
 {
-  "id": 2.2,
+  "id": 22,
   "story": "you distract yourself with insta reels till u fell asleep",
   "choices": [
     { "text": "proceed to the next day", "nextNode": 4 }
@@ -122,12 +122,12 @@
       "choices": [
         {
           "text": "act natural",
-          "nextNode": 4.1,
+          "nextNode": 41,
           "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
         },
         {
           "text": "stay away from them",
-          "nextNode": 4.10,
+          "nextNode": 410,
           "stats": { "mental": -25, "reputation": -20, "relationships": 30 }
         },
         {
@@ -139,13 +139,13 @@
     },
 
       {
-      "id": 4.1,
+      "id": 41,
       "title": "aura farming",
       "story": "you act all non chalant, your ex gives you a compliment, you act humble and say 'thank you' , you then go to your friend and act like you're having a great time.he/she keeps on tryna get your attention. ",
       "choices": [
         {
           "text": "ignore them ",
-          "nextNode": 4.10,
+          "nextNode": 410,
           "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
         },
       
@@ -158,13 +158,13 @@
     },
 
     {
-      "id": 4.10,
+      "id": 410,
       "title": "ignore their ass ",
       "story": "they start talking to your friend your friend is drunk and starts entertaining your ex , they had off to your ex's room",
       "choices": [
         {
           "text": "go get your friend",
-          "nextNode": 4.101,
+          "nextNode": 4101,
           "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
         },
         {
@@ -180,13 +180,13 @@
       ]
     },
     {
-      "id": 4.101,
+      "id": 4101,
       "title": "this ain't happening",
       "story": "you get there they already taking each others clothes off ",
       "choices": [
         {
           "text": "drag your friend out",
-          "nextNode": 4.1010,
+          "nextNode": 41010,
           "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
         },
         {
@@ -202,7 +202,7 @@
       ]
     },
    {
-      "id": 4.1010,
+      "id": 41010,
       "title": "shit..drama",
       "story": "you grab your friend they start shouting fuck off , they want to fight you now people are watching ..you are giving them content ",
       "choices": [
@@ -238,7 +238,7 @@
       "choices": [
         {
           "text": "pull them closer",
-          "nextNode": 5.11111111,
+          "nextNode": 511111111,
           "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
         },
        
@@ -269,7 +269,7 @@
       "choices": [
         {
           "text": "proceed",
-          "nextNode": 5.11111111,
+          "nextNode": 511111111,
           "stats": { "mental": -30, "reputation": -10, "relationships": -25 }
         },
        
@@ -281,50 +281,50 @@
       ]
     },
        {
-      "id": 5.11111111,
+      "id": 511111111,
       "title": "fuck yeaaaaa",
       "story": "ya'll start fucking your brains out......next day you wake up next to your ex and they ask you 'so... we back together or we juc fucking ?' ",
       "choices": [
         {
           "text": "juc fucking",
-          "nextNode": 5.2,
+          "nextNode": 52,
           "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
         },
       
         {
           "text": "back together",
-          "nextNode": 5.3,
+          "nextNode": 53,
           "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
         }
       ]
     },
 
      {
-      "id": 5.2,
+      "id": 52,
       "title": "awkward",
       "story": "your ex tells you to wear your clothes and leave ",
       "choices": [
         {
           "text": "try to explain",
-          "nextNode": 5.4,
+          "nextNode": 54,
           "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
         },
       
         {
           "text": "okay, lemme just goooo",
-          "nextNode": 5.5,
+          "nextNode": 55,
           "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
         }
       ]
     },
      {
-      "id": 5.4,
+      "id": 54,
       "title": "eish",
       "story": " you: ' rather we take things slow or something i aint ready to be in a relationship with after what happened'  your ex: 'yea , i cheated  and all that , its fine,juc leave' ",
       "choices": [
         {
           "text": "leave",
-          "nextNode": 5.5,
+          "nextNode": 55,
           "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
         }
       
@@ -333,7 +333,7 @@
     },
 
      {
-      "id": 5.5,
+      "id": 55,
       "title": "with time",
       "story": " a few months down the line they keep on tryna reach out to you but u still ignore them till you see a message ,  'you noe what..you should get tested,that'll teach you a lesson' , you test then you find out you have AIDS now",
       "choices": [
@@ -347,7 +347,7 @@
 
 
     {
-      "id": 5.3,
+      "id": 53,
       "title": "back together",
       "story": "ya'll are happy together for a few months till  that one day you decide to surprise them  with  a visit then u find them cheating on you  with the very same friend you went with to the party  ",
       "choices": [
@@ -415,7 +415,7 @@
       "choices": [
           {
           "text": "revenge",
-          "nextNode": 12.1,
+          "nextNode": 121,
           "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
         },
       
@@ -428,13 +428,13 @@
     },
 
       {
-      "id": 12.1,
+      "id": 121,
       "title": "bitter",
       "story": " a week passes by and your ex and ur friend are dating, but u find out that your ex has AIDS from an anonymous tip off ",
       "choices": [
           {
           "text": "sing like a bird",
-          "nextNode": 12.2,
+          "nextNode": 122,
           "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
         },
       
@@ -448,7 +448,7 @@
 
 
        {
-      "id": 12.2,
+      "id": 122,
       "title": "lil birdy",
       "story": " you spread the news  and everyone starts humiliating your friend in all kinds of ways till your friend cant take it anymore and commits suicide",
       "choices": [
