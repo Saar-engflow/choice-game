@@ -1,116 +1,497 @@
 {
-  "id": "lover_story",
-  "title": "Varsity vs Long Distance",
+  "id": "ex_story",
+  "title": "Campus Ex Drama",
   "startingNode": 1,
   "nodes": [
     {
       "id": 1,
-      "title": "First Semester Reality",
-      "story": "Your high school sweetheart is at UCT, you're at Wits. Three months in, the Facetime calls get shorter. 'Sorry, res wifi is trash,' they say at 1 AM. Their Snap location shows them at Roxy's Bar. Your resmate says, 'Bruh, everyone hooks up in first year. It's varsity law.'",
+      "title": "Late night text from EX 💔",
+      "story": "you at your bh,  bored , then you decide to post yourself on your whatsApp status .first thing you see is a text from your ex : ' You look amazing. Still thinking about us?😘'",
       "choices": [
         {
-          "text": "Book a bus to Cape Town this weekend",
+          "text": "Leave on read and block them",
           "nextNode": 2,
-          "stats": { "mental": -10, "money": -50, "relationships": 15 }
+          "stats": { "mental": 5, "reputation": 10, "relationships": -5 }
         },
         {
-          "text": "Confront them about the bar",
-          "nextNode": 3,
-          "stats": { "mental": -15, "reputation": 0, "relationships": -20 }
+          "text": "Reply: fuq off!'We're done. Move on.'",
+          "nextNode": 2.11,
+          "stats": { "mental": -3, "reputation": 5, "relationships": 0 }
         },
         {
-          "text": "Go to a res party yourself",
+          "text": "Reply: 'thank you . I do sometimes'",
           "nextNode": 4,
-          "stats": { "mental": -5, "reputation": -10, "relationships": -15 }
+          "stats": { "mental": -15, "reputation": -10, "relationships": 20 }
+        }
+      ]
+    },
+
+  
+    {
+  "id": 2,
+  "title": "Silent Treatment",
+  "story": "You lock your phone and toss it on the bed. Blocking feels powerful for about ten minutes. Then the silence creeps in. You tell yourself you're done, but your mind keeps replaying every moment you spent with them.",
+  "choices": [
+    {
+      "text": "Unblock them later that night",
+      "nextNode": 2.1,
+      "stats": { "mental": -5, "reputation": -2, "relationships": 5 }
+    },
+    {
+      "text": "Stay blocked and distract yourself",
+      "nextNode": 2.2,
+      "stats": { "mental": 5, "reputation": 5, "relationships": -5 }
+    },
+    {
+      "text": "Ignore everything and sleep early",
+      "nextNode": 4,
+      "stats": { "mental": 3, "reputation": 2, "relationships": -2 }
+    }
+  ]
+},
+{
+  "id": 2.1,
+  "story": "At 1:47 AM you unblock them  and at that very moment they send a text confessing their love to you and a long ass apology of how sorry they are and  they need a second chance.",
+  "choices": [
+    { "text": "ask why now?", "nextNode": 2.10 },
+    { "text": "Reply : eat shit and die !", "nextNode": 2.11 },
+    { "text": "give them a second chance", "nextNode": 4 }
+  ]
+},
+{
+  "id": 2.10,
+  "story": "they reply: 'i've been meaning to tell you this for a while now. I've been thinking about you and how much I miss you. I want to make things right and I want to be with you again. i want to break up with my current for you , i made a mistake ... can we meet up at my place?'",
+  "choices": [
+    { "text": "don't reply", "nextNode": 2.101 },
+    { "text": "its a trap ,clear as day!", "nextNode": 2.102 },
+    { "text": "agree and heard there the next day", "nextNode": 4 }
+  ]
+},
+{
+  "id": 2.101,
+  "story": "you see 'typing..'  then all of a sudden they just stop texting",
+  "choices": [
+    { "text": "sleep and forget about it", "nextNode": 4 }
+  
+  ]
+},
+{
+  "id": 2.102,
+  "story": "you reply : nice try but i ain't falling for that shit.  bluetick you.",
+  "choices": [
+    { "text": " forget about it and sleep", "nextNode": 4 }
+  
+  ]
+},
+
+{
+  "id": 2.11,
+  "story": "they reply: ouch  , i deserve that ..but i wont stop trying to get you back",
+  "choices": [
+    { "text": "ignore and sleep", "nextNode": 4 }
+  
+  ]
+},
+
+
+{
+  "id": 2.2,
+  "story": "you distract yourself with insta reels till u fell asleep",
+  "choices": [
+    { "text": "proceed to the next day", "nextNode": 4 }
+  
+  ]
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+      "id": 4,
+      "title": "house party",
+      "story": "the next day ..your ex has a party at their house at night  , u decide to go there not because of what happened yesterday but because your friend is a party freak free booze.your ex approaches you ..what do you do?",
+      "choices": [
+        {
+          "text": "act natural",
+          "nextNode": 4.1,
+          "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
+        },
+        {
+          "text": "stay away from them",
+          "nextNode": 4.10,
+          "stats": { "mental": -25, "reputation": -20, "relationships": 30 }
+        },
+        {
+          "text": "have a conversation",
+          "nextNode": 5,
+          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+        }
+      ]
+    },
+
+      {
+      "id": 4.1,
+      "title": "aura farming",
+      "story": "you act all non chalant, your ex gives you a compliment, you act humble and say 'thank you' , you then go to your friend and act like you're having a great time.he/she keeps on tryna get your attention. ",
+      "choices": [
+        {
+          "text": "ignore them ",
+          "nextNode": 4.10,
+          "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
+        },
+      
+        {
+          "text": "give your ex attention",
+          "nextNode": 5,
+          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+        }
+      ]
+    },
+
+    {
+      "id": 4.10,
+      "title": "ignore their ass ",
+      "story": "they start talking to your friend your friend is drunk and starts entertaining your ex , they had off to your ex's room",
+      "choices": [
+        {
+          "text": "go get your friend",
+          "nextNode": 4.101,
+          "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
+        },
+        {
+          "text": "good for them,enjoy ur company",
+          "nextNode": 6,
+          "stats": { "mental": -25, "reputation": -20, "relationships": 30 }
+        },
+        {
+          "text": "go back home",
+          "nextNode": 6,
+          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
         }
       ]
     },
     {
-      "id": 2,
-      "title": "Surprise Visit Disaster",
-      "story": "You arrive at their res in Rondebosch. Their roommate looks shocked. 'They're at a beach braai with... friends.' You find them at Camps Bay, shirtless, playing beer pong with someone's arm around them. 'Baby! What a surprise!' they slur. The 'friend' kisses their neck. 'Oops, habit!'",
+      "id": 4.101,
+      "title": "this ain't happening",
+      "story": "you get there they already taking each others clothes off ",
       "choices": [
         {
-          "text": "Throw your drink and leave",
-          "nextNode": 5,
-          "stats": { "mental": -40, "reputation": -20, "relationships": -80 }
+          "text": "drag your friend out",
+          "nextNode": 4.1010,
+          "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
         },
         {
-          "text": "Join the party, get wasted",
-          "nextNode": 6,
-          "stats": { "mental": -50, "reputation": -30, "relationships": -40 }
-        },
-        {
-          "text": "Calmly ask to talk privately",
+          "text": "watch /join them",
           "nextNode": 7,
-          "stats": { "mental": -30, "reputation": 5, "relationships": -60 }
+          "stats": { "mental": -25, "reputation": -20, "relationships": 30 }
+        },
+        {
+          "text": "leave",
+          "nextNode": 6,
+          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
         }
       ]
     },
+   {
+      "id": 4.1010,
+      "title": "shit..drama",
+      "story": "you grab your friend they start shouting fuck off , they want to fight you now people are watching ..you are giving them content ",
+      "choices": [
+        {
+          "text": "aint backing off a fight",
+          "nextNode": 8,
+          "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
+        },
+        {
+          "text": "leave",
+          "nextNode": 6,
+          "stats": { "mental": -25, "reputation": -20, "relationships": 30 }
+        }
+      ]
+    },
+    {
+      "id": 8 ,
+      "title": "darkmode",
+      "story": "You and your drunk friend start arguing loudly. In a moment of anger, you shove them, and they stumble backward. Their head smacks the corner of a table. Blood begins to pool on the floor. Panic sets in. Your ex kneels beside them, pressing a hand to their chest. 'They’re not breathing…' they whisper, fear and shock etched on their face.",
+      "choices": [
+        
+        {
+          "text": "shit...",
+          "nextNode": 20,
+          "stats": { "mental": -25, "reputation": -20, "relationships": 30 }
+        }
+      ]
+    },
+       {
+      "id": 7,
+      "title": "you a freak",
+      "story": "your friend blacks out during the moment then your ex pulls you closer",
+      "choices": [
+        {
+          "text": "pull them closer",
+          "nextNode": 5.1,
+          "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
+        },
+       
+        {
+          "text": "snap out and leave",
+          "nextNode": 6,
+          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+        }
+      ]
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+      "id": 5,
+      "title": "connection",
+      "story": "you have a good time with your ex , then they invite you to their room both of you are drunk then yall start making out",
+      "choices": [
+        {
+          "text": "proceed",
+          "nextNode": 5.1,
+          "stats": { "mental": -30, "reputation": -10, "relationships": -25 }
+        },
+       
+        {
+          "text": "stop and leave",
+          "nextNode": 10,
+          "stats": { "mental": -15, "reputation": 5, "relationships": -40 }
+        }
+      ]
+    },
+       {
+      "id": 5.1,
+      "title": "fuck yeaaaaa",
+      "story": "ya'll start fucking your brains out......next day you wake up next to your ex and they ask you 'so... we back together or we juc fucking ?' ",
+      "choices": [
+        {
+          "text": "juc fucking",
+          "nextNode": 5.2,
+          "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
+        },
+      
+        {
+          "text": "back together",
+          "nextNode": 5.3,
+          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+        }
+      ]
+    },
+
+     {
+      "id": 5.2,
+      "title": "awkward",
+      "story": "your ex tells you to wear your clothes and leave ",
+      "choices": [
+        {
+          "text": "try to explain",
+          "nextNode": 5.4,
+          "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
+        },
+      
+        {
+          "text": "okay, lemme just goooo",
+          "nextNode": 5.5,
+          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+        }
+      ]
+    },
+     {
+      "id": 5.4,
+      "title": "eish",
+      "story": " you: ' rather we take things slow or something i aint ready to be in a relationship with after what happened'  your ex: 'yea , i cheated  and all that , its fine,juc leave' ",
+      "choices": [
+        {
+          "text": "leave",
+          "nextNode": 5.5,
+          "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
+        }
+      
+      
+      ]
+    },
+
+     {
+      "id": 5.5,
+      "title": "with time",
+      "story": " a few months down the line they keep on tryna reach out to you but u still ignore them till you see a message ,  'you noe what..you should get tested,that'll teach you a lesson' , you test then you find out you have AIDS now",
+      "choices": [
+        {
+          "text": "shiiiiiittttt",
+          "nextNode": 20,
+          "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
+        }
+      ]
+    },
+
+
+    {
+      "id": 5.3,
+      "title": "back together",
+      "story": "ya'll are happy together for a few months till  that one day you decide to surprise them  with  a visit then u find them cheating on you  with the very same friend you went with to the party  ",
+      "choices": [
+       
+      
+        {
+          "text": "juc break up and leave",
+          "nextNode": 6,
+          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+        }
+      ]
+    },
+
+
+
+
+
+
+
     {
       "id": 6,
-      "title": "Revenge Hookup Spiral",
-      "story": "You take shots with a cute commerce student from Stellenbosch. 'My boyfriend cheated,' you slur. 'Mine too!' They kiss you. Photos surface on Yik Yak: 'Wits vs UCT drama at Camps Bay!' Your partner tries to apologize. You're in a stranger's Airbnb, doing lines of coke off a textbook.",
+      "title": "the friends you have",
+      "story": "your ex and your friend are together now..railing each others guts out! imagine, while u minding your business, u see a uni confession saying 'imagine your friend and ex fucking.... @[you] ' ",
       "choices": [
         {
-          "text": "Go home, get an STI test",
-          "nextNode": 8,
-          "stats": { "mental": -60, "reputation": -50, "relationships": -90 }
-        },
-        {
-          "text": "Continue the bender for the weekend",
-          "nextNode": 9,
-          "stats": { "mental": -80, "money": -200, "relationships": -100 }
-        },
-        {
-          "text": "Call your partner, crying",
-          "nextNode": 10,
-          "stats": { "mental": -70, "reputation": -40, "relationships": -70 }
-        }
-      ]
-    },
-    {
-      "id": 9,
-      "title": "Academic Freefall",
-      "story": "You miss three weeks of classes. Your parents get a call from the faculty. You're put on academic probation. The commerce student ghosts you. Your ex transfers to Wits 'to make things right.' You see them holding hands with someone at Neelsie Student Centre. Your life is a meme.",
-      "choices": [
-        {
-          "text": "Drop out, move back home",
-          "nextNode": 0,
-          "stats": { "mental": -90, "money": -1000, "reputation": -80 },
-          "isEnding": true,
-          "endingText": "You work at your uncle's spaza shop. Your ex graduates, tags you in a 'look how far we've come' post. You develop a healthy TikTok addiction."
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "title": "Mature Resolution",
-      "story": "You have the talk on the beach. 'Varsity changes people,' they admit. You both cry. Agree to open the relationship or break up. Choose open. Set rules: protection always, no mutual friends, monthly check-ins. It's messy but honest.",
-      "choices": [
-        {
-          "text": "Try the open relationship",
+          "text": "defend yourself in the group",
           "nextNode": 11,
-          "stats": { "mental": -20, "reputation": -15, "relationships": -30 }
+          "stats": { "mental": -20, "reputation": -15, "relationships": -50 }
         },
         {
-          "text": "Break up but stay friends",
+          "text": "call your ex ",
           "nextNode": 12,
-          "stats": { "mental": -25, "reputation": 10, "relationships": -100 }
+          "stats": { "mental": -50, "reputation": -30, "relationships": 20 }
+        },
+        {
+          "text": "ignore",
+          "nextNode": 13,
+          "stats": { "mental": -10, "reputation": 10, "relationships": -60 }
         }
       ]
     },
-    {
+        
+          {
       "id": 11,
-      "title": "Polyamory on Campus",
-      "story": "You hook up with your statistics tutor. They date their rugby teammate. Jealousy flares during exam season. 'You spent study week with them!' fights over WhatsApp. But the sex is incredible after make-up fights. Your friends call you 'progressive' but whisper 'messy.'",
+      "title": "self-defense",
+      "story": " you try to defend yourself in the group then your ex says ur friend is better in bed than you will ever be",
+      "choices": [
+          {
+          "text": "talk to your ex",
+          "nextNode": 12,
+          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+        },
+      
+        {
+          "text": "leave the group",
+          "nextNode": 13,
+          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+        }
+      ]
+    }, 
+     {
+      "id": 12,
+      "title": "your ex",
+      "story": " you shout at your ex on what they have caused , your ex rage baits you and tells you how much fun they having with your friend",
+      "choices": [
+          {
+          "text": "revenge",
+          "nextNode": 12.1,
+          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+        },
+      
+        {
+          "text": "cut the call,and ignore",
+          "nextNode": 20,
+          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+        }
+      ]
+    },
+
+      {
+      "id": 12.1,
+      "title": "bitter",
+      "story": " a week passes by and your ex and ur friend are dating, but u find out that your ex has AIDS from an anonymous tip off ",
+      "choices": [
+          {
+          "text": "sing like a bird",
+          "nextNode": 12.2,
+          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+        },
+      
+        {
+          "text": "leave it as is",
+          "nextNode": 13,
+          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+        }
+      ]
+    },
+
+
+       {
+      "id": 12.2,
+      "title": "lil birdy",
+      "story": " you spread the news  and everyone starts humiliating your friend in all kinds of ways till your friend cant take it anymore and commits suicide",
+      "choices": [
+          {
+          "text": "blame it on your ex",
+          "nextNode": 20,
+          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+        },
+      
+        {
+          "text": "take responsibility",
+          "nextNode": 20,
+          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+        }
+      ]
+    },
+
+     {
+      "id": 13,
+      "title": "peace",
+      "story": " you ignore every stunt your ex pulls and with time u hear that ur friend got infected by ur ex (AIDS)...sucks for them ...congrats ..u avoided all the drama!",
+      "choices": [
+       
+      
+        {
+          "text": "continue",
+          "nextNode": 20,
+          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+        }
+      ]
+    },
+   
+    {
+      "id": 20,
+      "title": "life can be  a bitch sometimes",
+      "story": "your ex can't stand the fact that you moved on",
       "choices": [
         {
-          "text": "Continue the arrangement",
+          "text": "moral of the story , an ex is an ex for a reason",
           "nextNode": 0,
-          "stats": { "mental": -40, "reputation": -25, "relationships": 20 },
+          "stats": { "mental": 60, "reputation": 70, "relationships": 40 },
           "isEnding": true,
-          "endingText": "You graduate with a 2:2 and a complicated love life. Your open relationship lasts until graduation, then fades with distance. No regrets, just stories."
+          "endingText": "at the end  of the day..the choice is yours."
         }
       ]
     }
