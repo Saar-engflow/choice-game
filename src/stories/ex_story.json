@@ -11,17 +11,17 @@
         {
           "text": "Leave on read and block them",
           "nextNode": 2,
-          "stats": { "mental": 5, "reputation": 10, "relationships": -5 }
+          "stats": { "mental": 5, "reputation": 10, "relationships": -1 }
         },
         {
           "text": "Reply: fuq off!'We're done. Move on.'",
           "nextNode": 211,
-          "stats": { "mental": -3, "reputation": 5, "relationships": 0 }
+          "stats": { "mental": -1, "reputation": 5, "relationships": 0 }
         },
         {
           "text": "Reply: 'thank you . I do sometimes'",
           "nextNode": 4,
-          "stats": { "mental": -15, "reputation": -10, "relationships": 20 }
+          "stats": { "mental": -2, "reputation": -1, "relationships": 20 }
         }
       ]
     },
@@ -35,7 +35,7 @@
     {
       "text": "Unblock them later that night",
       "nextNode": 21,
-      "stats": { "mental": -5, "reputation": -2, "relationships": 5 }
+      "stats": { "mental": -1, "reputation": -2, "relationships": 5 }
     },
     {
       "text": "Stay blocked and distract yourself",
@@ -123,17 +123,17 @@
         {
           "text": "act natural",
           "nextNode": 41,
-          "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
+          "stats": { "mental": 10, "reputation": 15, "relationships": -2 }
         },
         {
           "text": "stay away from them",
           "nextNode": 410,
-          "stats": { "mental": -25, "reputation": -20, "relationships": 30 }
+          "stats": { "mental": -2, "reputation": -2, "relationships": 30 }
         },
         {
           "text": "have a conversation",
           "nextNode": 5,
-          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+          "stats": { "mental": -2, "reputation": -1, "relationships": 25 }
         }
       ]
     },
@@ -146,13 +146,13 @@
         {
           "text": "ignore them ",
           "nextNode": 410,
-          "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
+          "stats": { "mental": 10, "reputation": 15, "relationships": -2 }
         },
       
         {
           "text": "give your ex attention",
           "nextNode": 5,
-          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+          "stats": { "mental": -2, "reputation": -1, "relationships": 25 }
         }
       ]
     },
@@ -170,12 +170,12 @@
         {
           "text": "good for them,enjoy ur company",
           "nextNode": 6,
-          "stats": { "mental": -25, "reputation": -20, "relationships": 30 }
+          "stats": { "mental": -1, "reputation": -2, "relationships": 30 }
         },
         {
           "text": "go back home",
           "nextNode": 6,
-          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+          "stats": { "mental": -2, "reputation": -1, "relationships": 25 }
         }
       ]
     },
@@ -192,12 +192,12 @@
         {
           "text": "watch /join them",
           "nextNode": 7,
-          "stats": { "mental": -25, "reputation": -20, "relationships": 30 }
+          "stats": { "mental": -2, "reputation": -2, "relationships": 30 }
         },
         {
           "text": "leave",
           "nextNode": 6,
-          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+          "stats": { "mental": -1, "reputation": -1, "relationships": 25 }
         }
       ]
     },
@@ -209,12 +209,12 @@
         {
           "text": "aint backing off a fight",
           "nextNode": 8,
-          "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
+          "stats": { "mental": 10, "reputation": 15, "relationships": -2 }
         },
         {
           "text": "leave",
           "nextNode": 6,
-          "stats": { "mental": -25, "reputation": -20, "relationships": 30 }
+          "stats": { "mental": -2, "reputation": -1, "relationships": 30 }
         }
       ]
     },
@@ -227,7 +227,7 @@
         {
           "text": "shit...",
           "nextNode": 20,
-          "stats": { "mental": -25, "reputation": -20, "relationships": 30 }
+          "stats": { "mental": -1, "reputation": -2, "relationships": 30 }
         }
       ]
     },
@@ -239,13 +239,13 @@
         {
           "text": "pull them closer",
           "nextNode": 511111111,
-          "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
+          "stats": { "mental": 10, "reputation": 15, "relationships": -2}
         },
        
         {
           "text": "snap out and leave",
           "nextNode": 6,
-          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+          "stats": { "mental": -2, "reputation": -1, "relationships": 25 }
         }
       ]
     },
@@ -270,13 +270,13 @@
         {
           "text": "proceed",
           "nextNode": 511111111,
-          "stats": { "mental": -30, "reputation": -10, "relationships": -25 }
+          "stats": { "mental": -1, "reputation": -1, "relationships": -2 }
         },
        
         {
           "text": "stop and leave",
           "nextNode": 10,
-          "stats": { "mental": -15, "reputation": 5, "relationships": -40 }
+          "stats": { "mental": -1, "reputation": 5, "relationships": -2 }
         }
       ]
     },
@@ -288,13 +288,13 @@
         {
           "text": "juc fucking",
           "nextNode": 52,
-          "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
+          "stats": { "mental": 10, "reputation": 15, "relationships": -2}
         },
       
         {
           "text": "back together",
           "nextNode": 53,
-          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+          "stats": { "mental": -2, "reputation": -1, "relationships": 25 }
         }
       ]
     },
@@ -307,13 +307,13 @@
         {
           "text": "try to explain",
           "nextNode": 54,
-          "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
+          "stats": { "mental": 10, "reputation": 15, "relationships": -2 }
         },
       
         {
           "text": "okay, lemme just goooo",
           "nextNode": 55,
-          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+          "stats": { "mental": -2, "reputation": -1, "relationships": 25 }
         }
       ]
     },
@@ -325,7 +325,7 @@
         {
           "text": "leave",
           "nextNode": 55,
-          "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
+          "stats": { "mental": 10, "reputation": 15, "relationships": -2 }
         }
       
       
@@ -340,7 +340,7 @@
         {
           "text": "shiiiiiittttt",
           "nextNode": 20,
-          "stats": { "mental": 10, "reputation": 15, "relationships": -20 }
+          "stats": { "mental": 10, "reputation": 15, "relationships": -2 }
         }
       ]
     },
@@ -356,7 +356,7 @@
         {
           "text": "juc break up and leave",
           "nextNode": 6,
-          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+          "stats": { "mental": -2, "reputation": -1, "relationships": 25 }
         }
       ]
     },
@@ -375,17 +375,17 @@
         {
           "text": "defend yourself in the group",
           "nextNode": 11,
-          "stats": { "mental": -20, "reputation": -15, "relationships": -50 }
+          "stats": { "mental": 40, "reputation": -1, "relationships": -1 }
         },
         {
           "text": "call your ex ",
           "nextNode": 12,
-          "stats": { "mental": -50, "reputation": -30, "relationships": 20 }
+          "stats": { "mental": 2, "reputation": -3, "relationships": 2}
         },
         {
           "text": "ignore",
           "nextNode": 13,
-          "stats": { "mental": -10, "reputation": 10, "relationships": -60 }
+          "stats": { "mental": 10, "reputation": 30, "relationships": 20 }
         }
       ]
     },
@@ -398,13 +398,13 @@
           {
           "text": "talk to your ex",
           "nextNode": 12,
-          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+          "stats": { "mental": -2, "reputation": -1, "relationships": 2 }
         },
       
         {
           "text": "leave the group",
           "nextNode": 13,
-          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+          "stats": { "mental": -2, "reputation": -1, "relationships": 25 }
         }
       ]
     }, 
@@ -416,13 +416,13 @@
           {
           "text": "revenge",
           "nextNode": 121,
-          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+          "stats": { "mental": -2, "reputation": -1, "relationships": 25 }
         },
       
         {
           "text": "cut the call,and ignore",
           "nextNode": 20,
-          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+          "stats": { "mental": -2, "reputation": -1, "relationships": 25 }
         }
       ]
     },
@@ -435,13 +435,13 @@
           {
           "text": "sing like a bird",
           "nextNode": 122,
-          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+          "stats": { "mental": 20, "reputation": -1, "relationships": 25 }
         },
       
         {
           "text": "leave it as is",
           "nextNode": 13,
-          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+          "stats": { "mental": 20, "reputation": 15, "relationships": 25 }
         }
       ]
     },
@@ -455,13 +455,13 @@
           {
           "text": "blame it on your ex",
           "nextNode": 20,
-          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+          "stats": { "mental": -2, "reputation": -10, "relationships": 25 }
         },
       
         {
           "text": "take responsibility",
           "nextNode": 20,
-          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+          "stats": { "mental": 20, "reputation": 15, "relationships": 25 }
         }
       ]
     },
@@ -476,7 +476,7 @@
         {
           "text": "continue",
           "nextNode": 20,
-          "stats": { "mental": -20, "reputation": -15, "relationships": 25 }
+          "stats": { "mental": 20, "reputation": 15, "relationships": 25 }
         }
       ]
     },
