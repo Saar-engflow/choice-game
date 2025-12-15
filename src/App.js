@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Heart, Skull, Smartphone, DollarSign, Users, Home } from 'lucide-react';
 import './styles.css';
 import storyData from './stories.json';
@@ -14,23 +14,90 @@ const ChoicesGame = () => {
     mental: 50,
     reputation: 50
   });
+  const [visitedNodes, setVisitedNodes] = useState(new Set());
+  const [gameOver, setGameOver] = useState(false);
+  const [storyProgress, setStoryProgress] = useState(0);
 
-  // Convert array to object for easier lookup
-  const storyNodes = storyData.reduce((acc, node) => {
-    acc[node.id] = node;
-    return acc;
-  }, {});
-
-  // Pick a random starting node on load
-  useEffect(() => {
-    const allNodeKeys = Object.keys(storyNodes);
-    const randomKey = allNodeKeys[Math.floor(Math.random() * allNodeKeys.length)];
-    setCurrentNode(storyNodes[randomKey]);
+  // Memoize the story nodes object
+  const storyNodes = React.useMemo(() => {
+    return storyData.reduce((acc, node) => {
+      acc[node.id] = node;
+      return acc;
+    }, {});
   }, []);
+
+  // Get unvisited nodes
+  const getUnvisitedNodes = useCallback(() => {
+    return Object.keys(storyNodes).filter(id => !visitedNodes.has(parseInt(id)));
+  }, [storyNodes, visitedNodes]);
+
+  // Pick a new unvisited node
+  const pickNewNode = useCallback(() => {
+    const unvisited = getUnvisitedNodes();
+    
+    if (unvisited.length === 0) {
+      // All nodes visited - either restart or pick random
+      console.log('All stories visited!');
+      const allNodes = Object.keys(storyNodes);
+      const randomKey = allNodes[Math.floor(Math.random() * allNodes.length)];
+      return storyNodes[randomKey];
+    }
+
+    // Weighted selection based on mental health
+    const unvisitedNodes = unvisited.map(id => storyNodes[id]);
+    
+    if (stats.mental < 30) {
+      // Low mental health: 80% chance dark, 20% random
+      const darkClusters = ['toxicEx', 'cult', 'criminal', 'horror', 'manipulator'];
+      const darkNodes = unvisitedNodes.filter(node => darkClusters.includes(node.cluster));
+      if (darkNodes.length > 0 && Math.random() < 0.8) {
+        return darkNodes[Math.floor(Math.random() * darkNodes.length)];
+      }
+    } else if (stats.mental > 70) {
+      // High mental health: 80% chance light, 20% random
+      const lightClusters = ['newLove', 'connection'];
+      const lightNodes = unvisitedNodes.filter(node => lightClusters.includes(node.cluster));
+      if (lightNodes.length > 0 && Math.random() < 0.8) {
+        return lightNodes[Math.floor(Math.random() * lightNodes.length)];
+      }
+    }
+    
+    // Random from unvisited
+    return unvisitedNodes[Math.floor(Math.random() * unvisitedNodes.length)];
+  }, [getUnvisitedNodes, storyNodes, stats.mental]);
+
+  // Check for game over
+  useEffect(() => {
+    if (stats.mental <= 0 || stats.relationships <= 0 || stats.money <= 0) {
+      setGameOver(true);
+    }
+  }, [stats]);
+
+  // Initialize or pick new node
+  useEffect(() => {
+    if (gameOver) return;
+    
+    if (!currentNode) {
+      // First load - pick starting node
+      const newNode = pickNewNode();
+      setCurrentNode(newNode);
+      if (newNode) {
+        setVisitedNodes(prev => new Set([...prev, newNode.id]));
+      }
+    }
+  }, [currentNode, gameOver, pickNewNode]);
+
+  // Update progress percentage
+  useEffect(() => {
+    if (storyNodes && visitedNodes.size > 0) {
+      const progress = Math.round((visitedNodes.size / Object.keys(storyNodes).length) * 100);
+      setStoryProgress(Math.min(progress, 100));
+    }
+  }, [visitedNodes, storyNodes]);
 
   // Typing effect
   useEffect(() => {
-    if (!currentNode || !currentNode.story) return;
+    if (!currentNode || !currentNode.story || gameOver) return;
 
     setDisplayText('');
     setShowChoices(false);
@@ -38,21 +105,21 @@ const ChoicesGame = () => {
 
     let index = 0;
     const text = currentNode.story;
-    const typingSpeed = 30;
+    const typingSpeed = Math.max(10, Math.min(50, 100 - stats.mental)); // Faster when stressed
 
     const interval = setInterval(() => {
       if (index < text.length) {
-        setDisplayText(text.slice(0, index + 1));
+        setDisplayText(prev => prev + text[index]);
         index++;
       } else {
         setIsTyping(false);
-        setTimeout(() => setShowChoices(true), 500);
+        setTimeout(() => setShowChoices(true), 300);
         clearInterval(interval);
       }
     }, typingSpeed);
 
     return () => clearInterval(interval);
-  }, [currentNode]);
+  }, [currentNode, gameOver, stats.mental]);
 
   const handleChoice = (choice) => {
     // Update stats
@@ -67,14 +134,31 @@ const ChoicesGame = () => {
     }
 
     // Navigate to next node
+    let nextNode;
     if (choice.nextId && storyNodes[choice.nextId]) {
-      setCurrentNode(storyNodes[choice.nextId]);
+      nextNode = storyNodes[choice.nextId];
     } else {
-      // Fallback to random node if nextId is invalid
-      const allNodeKeys = Object.keys(storyNodes);
-      const randomKey = allNodeKeys[Math.floor(Math.random() * allNodeKeys.length)];
-      setCurrentNode(storyNodes[randomKey]);
+      // Fallback to random unvisited node
+      nextNode = pickNewNode();
     }
+
+    if (nextNode) {
+      setCurrentNode(nextNode);
+      setVisitedNodes(prev => new Set([...prev, nextNode.id]));
+    }
+  };
+
+  const restartGame = () => {
+    setCurrentNode(null);
+    setStats({
+      relationships: 50,
+      money: 30,
+      mental: 50,
+      reputation: 50
+    });
+    setVisitedNodes(new Set());
+    setGameOver(false);
+    setStoryProgress(0);
   };
 
   const getStatColor = (value) => {
@@ -83,228 +167,171 @@ const ChoicesGame = () => {
     return 'from-red-500 to-rose-600';
   };
 
-  if (!currentNode) return null;
-
-  // Map titles to icons
-  const iconMap = {
-    'A Late Night Call': Heart,
-    'The Ex Returns': Heart,
-    'Crush Confessions': Heart,
-    'Jealousy Strikes': Heart,
-    'First Date Disasters': Heart,
-    'Breakup Blues': Heart,
-    'Secret Affairs': Heart,
-    'Love at First Sight': Heart,
-    'Toxic Relationships': Heart,
-    'Rekindled Flames': Heart,
-    'Family Secrets': Home,
-    'Parental Pressure': Home,
-    'Sibling Rivalry': Home,
-    'Generational Gaps': Home,
-    'Holiday Disasters': Home,
-    'Inheritance Issues': Home,
-    'Family Reunions': Home,
-    'Parenting Struggles': Home,
-    'Moving Back Home': Home,
-    'Family Traditions': Home,
-    'Moral Dilemmas': Skull,
-    'Right vs Wrong': Skull,
-    'Guilty Conscience': Skull,
-    'Temptation Calls': Skull,
-    'Justice Served': Skull,
-    'Honesty Tests': Skull,
-    'Sacrifice Needed': Skull,
-    'Greed vs Good': Skull,
-    'Truth Revealed': Skull,
-    'Forgiveness Sought': Skull,
-    'Faith Tested': Users,
-    'Spiritual Journeys': Users,
-    'Religious Conflicts': Users,
-    'Divine Signs': Users,
-    'Church Politics': Users,
-    'Conversion Debates': Users,
-    'Prayer Answered': Users,
-    'Sin and Redemption': Users,
-    'Religious Family': Users,
-    'Spiritual Doubts': Users,
-    'Daily Struggles': DollarSign,
-    'Unexpected Events': DollarSign,
-    'Routine Disrupted': DollarSign,
-    'Life Changes': DollarSign,
-    'Practical Problems': DollarSign,
-    'Everyday Decisions': DollarSign,
-    'Real World Issues': DollarSign,
-    'Adulting Hard': DollarSign,
-    'Unexpected Opportunities': DollarSign,
-    'Daily Dilemmas': DollarSign,
-    'Funny Mishaps': Smartphone,
-    'Awkward Moments': Smartphone,
-    'Comedy of Errors': Smartphone,
-    'Silly Situations': Smartphone,
-    'Laughable Disasters': Smartphone,
-    'Humorous Encounters': Smartphone,
-    'Ridiculous Events': Smartphone,
-    'Comedic Timing': Smartphone,
-    'Funny Failures': Smartphone,
-    'Lighthearted Chaos': Smartphone,
-    'Heartfelt Moments': Heart,
-    'Emotional Turmoil': Heart,
-    'Deep Feelings': Heart,
-    'Vulnerable Times': Heart,
-    'Intense Emotions': Heart,
-    'Feeling Overwhelmed': Heart,
-    'Emotional Breakthroughs': Heart,
-    'Sentimental Journeys': Heart,
-    'Raw Emotions': Heart,
-    'Emotional Connections': Heart,
-    'Dark Thoughts': Skull,
-    'Sinister Events': Skull,
-    'Morbid Curiosity': Skull,
-    'Shadowy Secrets': Skull,
-    'Disturbing Realities': Skull,
-    'Gloomy Prospects': Skull,
-    'Haunting Memories': Skull,
-    'Bleak Futures': Skull,
-    'Twisted Desires': Skull,
-    'Dark Impulses': Skull
+  const getIconForCluster = (cluster) => {
+    const darkClusters = ['toxicEx', 'cult', 'criminal', 'horror', 'manipulator'];
+    return darkClusters.includes(cluster) ? Skull : Heart;
   };
 
-  const Icon = iconMap[currentNode.title] || Heart;
+  if (gameOver) {
+    return (
+      <div className="min-h-screen bg-black text-white font-mono flex items-center justify-center p-6">
+        <div className="text-center max-w-md">
+          <h1 className="text-6xl font-bold mb-4 glitch" data-text="GAME OVER">GAME OVER</h1>
+          <p className="text-xl mb-6">Your journey ends here.</p>
+          <div className="mb-8 p-4 bg-gray-900/50 rounded-lg">
+            <p className="text-lg">Stories explored: <span className="text-purple-400">{visitedNodes.size}</span></p>
+            <p className="text-sm text-gray-400 mt-2">Progress: {storyProgress}%</p>
+          </div>
+          <button
+            onClick={restartGame}
+            className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg hover:opacity-90 transition font-bold text-lg"
+          >
+            START NEW JOURNEY
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (!currentNode) {
+    return (
+      <div className="min-h-screen bg-black text-white font-mono flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-500 mx-auto mb-4"></div>
+          <p>Loading your story...</p>
+        </div>
+      </div>
+    );
+  }
+
+  const Icon = getIconForCluster(currentNode.cluster);
 
   return (
     <div className="min-h-screen bg-black text-white font-mono relative overflow-hidden">
+      {/* Progress bar at top */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gray-800">
+        <div 
+          className="h-full bg-gradient-to-r from-purple-600 to-pink-600 transition-all duration-500"
+          style={{ width: `${storyProgress}%` }}
+        ></div>
+      </div>
+
       {/* Animated background */}
-      <div className="fixed inset-0 opacity-20">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-purple-600 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-600 rounded-full blur-3xl animate-pulse delay-700"></div>
-        <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-blue-600 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      <div className="fixed inset-0 opacity-10">
+        <div className={`absolute top-20 left-10 w-64 h-64 rounded-full blur-3xl animate-pulse ${
+          stats.mental < 30 ? 'bg-red-900' : 'bg-purple-600'
+        }`}></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-2xl mx-auto p-6 min-h-screen flex flex-col">
+      <div className="relative z-10 max-w-2xl mx-auto p-4 sm:p-6 min-h-screen flex flex-col">
         {/* Header */}
-        <div className="mb-8 pt-6">
-          <h1 className="text-4xl font-bold mb-2 glitch" data-text="CHOICES">
-            CHOICES
-          </h1>
-          <p className="text-gray-400 text-sm">every choice has consequences. no saves. no regrets.</p>
+        <div className="mb-6 pt-8">
+          <div className="flex justify-between items-center mb-2">
+            <h1 className="text-3xl sm:text-4xl font-bold glitch" data-text="CHOICES">CHOICES</h1>
+            <div className="text-right">
+              <p className="text-xs text-gray-400">Story #{currentNode.id}</p>
+              <p className="text-xs">{currentNode.cluster}</p>
+            </div>
+          </div>
+          <p className="text-gray-400 text-sm">Unique stories: {visitedNodes.size}/1000+</p>
         </div>
 
-        {/* Stats Bar */}
-        <div className="grid grid-cols-2 gap-3 mb-8">
-          <div className="bg-gray-900/50 backdrop-blur rounded-lg p-3 border border-gray-800">
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-xs text-gray-400">relationships</span>
-              <span className="text-xs text-white">{stats.relationships}%</span>
+        {/* Stats */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mb-6">
+          {Object.entries(stats).map(([key, value]) => (
+            <div key={key} className="bg-gray-900/50 backdrop-blur rounded-lg p-3 border border-gray-800">
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs text-gray-400">{key}</span>
+                <span className={`text-xs font-bold ${
+                  value < 30 ? 'text-red-400' : value < 70 ? 'text-yellow-400' : 'text-green-400'
+                }`}>
+                  {value}%
+                </span>
+              </div>
+              <div className="h-1.5 bg-gray-800 rounded-full overflow-hidden">
+                <div 
+                  className={`h-full bg-gradient-to-r ${getStatColor(value)} transition-all duration-300`}
+                  style={{ width: `${value}%` }}
+                ></div>
+              </div>
             </div>
-            <div className="h-1.5 bg-gray-800 rounded-full overflow-hidden">
-              <div 
-                className={`h-full bg-gradient-to-r ${getStatColor(stats.relationships)} transition-all duration-500`}
-                style={{ width: `${stats.relationships}%` }}
-              ></div>
-            </div>
-          </div>
-
-          <div className="bg-gray-900/50 backdrop-blur rounded-lg p-3 border border-gray-800">
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-xs text-gray-400">money</span>
-              <span className="text-xs text-white">{stats.money}%</span>
-            </div>
-            <div className="h-1.5 bg-gray-800 rounded-full overflow-hidden">
-              <div 
-                className={`h-full bg-gradient-to-r ${getStatColor(stats.money)} transition-all duration-500`}
-                style={{ width: `${stats.money}%` }}
-              ></div>
-            </div>
-          </div>
-
-          <div className="bg-gray-900/50 backdrop-blur rounded-lg p-3 border border-gray-800">
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-xs text-gray-400">mental health</span>
-              <span className="text-xs text-white">{stats.mental}%</span>
-            </div>
-            <div className="h-1.5 bg-gray-800 rounded-full overflow-hidden">
-              <div 
-                className={`h-full bg-gradient-to-r ${getStatColor(stats.mental)} transition-all duration-500`}
-                style={{ width: `${stats.mental}%` }}
-              ></div>
-            </div>
-          </div>
-
-          <div className="bg-gray-900/50 backdrop-blur rounded-lg p-3 border border-gray-800">
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-xs text-gray-400">reputation</span>
-              <span className="text-xs text-white">{stats.reputation}%</span>
-            </div>
-            <div className="h-1.5 bg-gray-800 rounded-full overflow-hidden">
-              <div 
-                className={`h-full bg-gradient-to-r ${getStatColor(stats.reputation)} transition-all duration-500`}
-                style={{ width: `${stats.reputation}%` }}
-              ></div>
-            </div>
-          </div>
+          ))}
         </div>
 
         {/* Story Card */}
         <div className="flex-1 flex flex-col">
-          <div className="bg-gradient-to-br from-gray-900/90 to-black/90 backdrop-blur-xl rounded-2xl p-8 border border-gray-800 shadow-2xl mb-6 flex-1">
+          <div className="bg-gradient-to-br from-gray-900/90 to-black/90 backdrop-blur-xl rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-gray-800 shadow-2xl mb-6 flex-1">
             {/* Icon */}
             <div className="mb-6 flex justify-center">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center animate-pulse">
-                <Icon className="w-8 h-8" />
+              <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center animate-pulse ${
+                stats.mental < 30 ? 'bg-gradient-to-br from-red-900 to-black' : 'bg-gradient-to-br from-purple-600 to-pink-600'
+              }`}>
+                <Icon className="w-6 h-6 sm:w-8 sm:h-8" />
               </div>
             </div>
 
+            {/* Title */}
+            <h2 className="text-lg sm:text-xl font-bold text-center mb-4 text-white">
+              {currentNode.title}
+            </h2>
+
             {/* Story Text */}
-            <div className="mb-8">
-              <p className="text-lg leading-relaxed text-black">
+            <div className="mb-8 min-h-[100px]">
+              <p className="text-base sm:text-lg leading-relaxed text-white">
                 {displayText}
                 {isTyping && <span className="inline-block w-2 h-5 bg-white ml-1 animate-pulse"></span>}
               </p>
             </div>
 
             {/* Choices */}
-            <div className={`space-y-3 transition-all duration-500 ${showChoices ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <div className={`space-y-3 transition-all duration-300 ${
+              showChoices ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
+            }`}>
               {showChoices && currentNode.choices.map((choice, index) => (
                 <button
                   key={index}
                   onClick={() => handleChoice(choice)}
-                  className="w-full text-left p-4 rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-200 hover:to-gray-300 border border-gray-300 hover:border-gray-400 transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg hover:shadow-gray-400/20"
+                  className="w-full text-left p-3 sm:p-4 rounded-lg sm:rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-200 hover:to-gray-300 border border-gray-300 hover:border-gray-400 transition-all duration-200 transform hover:scale-[1.01] active:scale-[0.99]"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <span className="text-black mr-2">→</span>
-                  <span className="text-black">{choice.text}</span>
+                  <span className="text-black mr-2">›</span>
+                  <span className="text-black text-sm sm:text-base">{choice.text}</span>
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Footer hint */}
-          <div className="text-center text-gray-600 text-xs">
-            <p>no progress saved. every playthrough is unique.</p>
-            <p className="mt-1">refresh to start over randomly.</p>
+          {/* Footer */}
+          <div className="text-center text-gray-600 text-xs pb-4">
+            <p>{visitedNodes.size} unique stories explored • {storyProgress}% complete</p>
+            <p className="mt-1">Refresh to restart • Choices are permanent</p>
           </div>
         </div>
       </div>
 
-      <style>{`
+      <style jsx>{`
         @keyframes glitch {
           0% { transform: translate(0); }
-          20% { transform: translate(-2px, 2px); }
-          40% { transform: translate(-2px, -2px); }
-          60% { transform: translate(2px, 2px); }
-          80% { transform: translate(2px, -2px); }
+          20% { transform: translate(-1px, 1px); }
+          40% { transform: translate(-1px, -1px); }
+          60% { transform: translate(1px, 1px); }
+          80% { transform: translate(1px, -1px); }
           100% { transform: translate(0); }
         }
 
         .glitch {
-          animation: glitch 1s infinite;
+          animation: glitch 0.5s infinite;
+        }
+
+        @media (max-width: 640px) {
+          .glitch {
+            animation: none;
+          }
         }
       `}</style>
     </div>
   );
 };
 
-
 export default ChoicesGame;
-          
